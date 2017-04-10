@@ -20,7 +20,7 @@ class App extends Component {
 
 export default App;
 */
-
+/*
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -90,6 +90,35 @@ const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
+)
+
+export default App
+*/
+
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+
+import 'bootstrap/dist/css/bootstrap.css'
+import './index.css'
+
+import Home from './Scenes/Home'
+import DiscoverScene from './Scenes/DiscoverScene'
+import ImageScene from './Scenes/ImageScene'
+import NotFound from './Scenes/NotFound'
+
+const App = () => (
+  <Router>
+    <div>
+      <Route exact path="/" component={Home}/>
+      <Route path="/d/:name" component={DiscoverScene}/>
+      <Route path="/p/:id" component={ImageScene}/>
+      <Route path="*" component={Home}/>
+      {/*<Route path="*" component={NotFound}/>*/}
+    </div>
+  </Router>
 )
 
 export default App

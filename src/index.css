@@ -1,5 +1,52 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  background: #ecf0f1;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #2e2e2e;
 }
+
+.jumbotron{
+    background: white;
+}
+
+.navbar{
+  border-bottom: 1px solid #e6e6e6;
+}
+.navbar-inverse .navbar-nav > li > a{
+  color: black;
+}
+.navbar-inverse .navbar-brand{
+  color: #F9690E;
+}
+.btn-success:hover{
+  color: white;
+}
+.btn-success{
+  color: black;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+  color: #CA6924;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+  color: #CA6924;
+}
+.navbar-inverse{
+  background-color: white;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+  background-color: white;
+  color: black;
+  border-bottom: solid #F9690E;
+  border-bottom-width: 3px;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    border-color: #CA6924;
+}
+/*
+.btn-success:hover{
+  background-color: #CA6924;
+  border-color: #CA6924;
+}
+*/
