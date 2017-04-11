@@ -86,7 +86,9 @@ class Infinite extends Component {
                   {track.map(function(row, i){
                     return (
                       <Col xs={6} md={4} key={i} className="img_box">
-                        <img src={row} className="img" />
+                        <a href="/p/{i}">
+                            <img src={row} className="img" />
+                        </a>
                       </Col>
                     )
                   })}

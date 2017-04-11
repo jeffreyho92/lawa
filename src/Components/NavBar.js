@@ -36,11 +36,12 @@ class NavBar extends Component {
             <Nav>
               <li className={(this.props.active === "home")? "active" : ""}><NavLink to="/">Home</NavLink></li>
               <li className={(this.props.active === "discover")? "active" : ""}><NavLink to="/discover">Discover</NavLink></li>
-              <li className={(this.props.active === "about")? "active" : ""}><NavLink to="/about">About</NavLink></li>
             </Nav>
+            {/*
             <Nav pullRight>
               <NavItem eventKey={1} href="#">Link Right</NavItem>
             </Nav>
+            */}
           </Navbar.Collapse>
         </Navbar>
       </div>
