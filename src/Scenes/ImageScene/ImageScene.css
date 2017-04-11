@@ -1,6 +1,64 @@
-.imageContent{
-    padding: 100px 30px 30px 30px;
+/* phone screen */
+@media (min-width:320px)  {
+    .row{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .imageContent{
+        padding-top: 4em;
+    }
+    .equal{
+        display: none;
+    }
+    .img_col{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .user_col{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: white;
+        border-bottom: 1px solid lightgrey;
+    }
+    .likes_col{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: white;
+    }
+    .comments_col{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: white;
+    }
 }
+
+
+/* desktop screen */
+@media only screen and (min-width: 768px) {
+    .mobileImageContent{
+        display: none;
+    }
+    .imageContent{
+        padding: 100px 30px 30px 30px;
+    }
+    .equal {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid lightgrey;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      background-color: white;
+    }
+}
+
+
+
 
 .leftBox{
     padding: 0px;
@@ -30,13 +88,6 @@
     border: 0px;
 }
 
-.equal {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid lightgrey;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-}
 
 .likesBox{
     height: 43px;

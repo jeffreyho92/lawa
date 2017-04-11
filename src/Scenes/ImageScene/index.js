@@ -62,6 +62,62 @@ class ImageScene extends Component {
                     </Row>
                 </Col>
             </Row>
+            <Row className="mobileImageContent">
+                <Col xs={12} className="img_col">
+                    <img src={'https://scontent-kut2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16584974_1458979630788510_3806227282167595008_n.jpg'}
+                    className="img" />
+                </Col>
+                <Col xs={12} className="user_col">
+                    <Row style={{display: 'flex', alignItems: 'center'}}>
+                        <Col xs={8}>
+                            <Image src={img4} style={{width: 50, height: 50}} circle/>
+                            <span className="username">Alkarus</span>
+                        </Col>
+                        <Col xs={4}>
+                            <Button bsStyle="success" bsSize="sm" className="pull-right">follow</Button>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col xs={12} className="likes_col">
+                    <Row style={{display: 'flex', alignItems: 'center'}}>
+                        <Col xs={10}>
+                            2,130 likes
+                        </Col>
+                        <Col xs={2}>
+                            2w
+                        </Col>
+                    </Row>
+                </Col>
+                <Col xs={12} className="comments_col">
+                    <Row style={{display: 'flex', alignItems: 'center'}}>
+                        <Col xs={12}>
+                            <ul className="list-unstyled">
+                                <li>
+                                    <a className="name">1</a> &emsp;
+                                    <span>Abc</span>
+                                </li>
+                                <li>
+                                    <a className="name">2</a> &emsp;
+                                    <span>Def</span>
+                                </li>
+                                <li>
+                                    <a className="name">3</a> &emsp;
+                                    <span>Ghi</span>
+                                </li>
+                                <li>
+                                    &emsp;
+                                </li>
+                                <li>
+                                    &emsp;
+                                </li>
+                                <li>
+                                    &emsp;
+                                </li>
+                            </ul>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
           </Row>
         </Grid>
         <FooterBar />
