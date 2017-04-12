@@ -5,6 +5,7 @@ body {
   background: #ecf0f1;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2e2e2e;
+  font-size: 15px;
 }
 
 .jumbotron{
@@ -44,9 +45,50 @@ body {
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     border-color: #CA6924;
 }
-/*
+
+.btn-success{
+  color: black;
+  background-color: #F9690E;
+  border-color: #F9690E;
+}
 .btn-success:hover{
+  color: white;
   background-color: #CA6924;
   border-color: #CA6924;
 }
-*/
+
+.btn{
+  border-width: 2px;
+}
+
+.btn-sm, .btn-group-sm > .btn{
+  padding: 6px 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.navbar{
+  min-height: 60px;
+}
+.navbar-brand{
+  line-height: 1;
+  height: 60px;
+  padding: 19.5px 15px;
+  font-size: 19px;
+}
+.navbar-toggle{
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+.navbar-inverse .navbar-toggle{
+  border-color: #CA6924;
+}
+
+@media (min-width:768px) {
+  .navbar-nav > li > a {
+    padding-top: 19.5px;
+    padding-bottom: 19.5px;
+    line-height: 21px;
+  }
+}

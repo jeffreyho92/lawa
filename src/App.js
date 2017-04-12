@@ -115,8 +115,6 @@ const App = () => (
       <Route exact path="/" component={Home}/>
       <Route path="/d/:name" component={DiscoverScene}/>
       <Route path="/p/:id" component={ImageScene}/>
-      <Route path="*" component={Home}/>
-      
       {/*<Route path="*" component={NotFound}/>*/}
     </div>
   </Router>

@@ -70,6 +70,17 @@
         padding-left: 1px;
         padding-right: 1px;
     }
+    /*
+    .img_box:nth-of-type(even) img{
+        padding-left: 1px;
+    }
+    .img_box:nth-of-type(odd) img{
+        padding-right: 1px;
+    }*/
+    .cat_col{
+        padding-left: 0em;
+        padding-right: 0em;
+    }
 }
 
 /* desktop screen */
@@ -103,6 +114,10 @@
     }
     .img_box{
         padding-bottom: 2.2em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .cat_col{
         padding-left: 1em;
         padding-right: 1em;
     }
