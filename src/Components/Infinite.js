@@ -22,7 +22,47 @@ class Infinite extends Component {
     }
 
     loadItems(page) {
+        qwest.get('https://lawa-api.herokuapp.com/api/users')
+    	 .then(function(xhr, response) {
+    		alert(response);
+    	 });
+    	 
         var self = this;
+        /*
+        qwest.base = 'https://nodejs-jeffreyho92.c9users.io:8081/api'
+        qwest.get('/users',{
+                id: 'test'
+            },{
+                cache:true
+            })
+            .then(function(xhr, resp){
+                if(resp) {
+                    console.log(resp);
+                    /*
+                    var tracks = self.state.tracks;
+                    resp.collection.map((track) => {
+                        if(track.artwork_url == null) {
+                            track.artwork_url = track.user.avatar_url;
+                        }
+    
+                        tracks.push(track);
+                    });
+                    */
+                    /*
+                    if(resp.next_href) {
+                        self.setState({
+                            tracks: tracks,
+                            nextHref: resp.next_href
+                        });
+                    } else {
+                        self.setState({
+                            hasMoreItems: false
+                        });
+                    }
+                    *//*
+                }
+        })*/
+        
         /*
         var url = api.baseUrl + '/users/8665091/favorites';
         if(this.state.nextHref) {

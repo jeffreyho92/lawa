@@ -1,0 +1,82 @@
+/* phone screen */
+@media (min-width:320px)  {
+    .img_cat_local{
+        background: black url(../../../public/img/cat_local.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .img_cat_asia{
+        background: black url(../../../public/img/cat_asia.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .img_cat_global{
+        background: black url(../../../public/img/cat_global.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .img_cat_girls{
+        background: black url(../../../public/img/cat_girls.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .cat_list{
+        padding-top: 4em;
+    }
+    .cat_list_col{
+        padding-left: 0em;
+        padding-right: 0em;
+    }
+    .cat_list .cat_list_box span {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .cat_list .cat_list_box{
+        height: 17em;
+    }
+}
+
+/* desktop screen */
+@media only screen and (min-width: 768px) {
+    .img_cat_local{
+        background: black url(../../../public/img/cat_local.jpg) center center no-repeat fixed;
+        background-size: cover;
+        background-position: -105px -120px;
+    }
+    .img_cat_asia{
+        background: black url(../../../public/img/cat_asia.jpg) center center no-repeat fixed;
+        background-size: cover;
+        background-position: -105px -120px;
+    }
+    .img_cat_global{
+        background: black url(../../../public/img/cat_global.jpg) center center no-repeat fixed;
+        background-size: cover;
+        background-position: -105px -120px;
+    }
+    .img_cat_girls{
+        background: black url(../../../public/img/cat_girls.jpg) center center no-repeat fixed;
+        background-size: cover;
+        background-position: -350px -100px;
+    }
+    .cat_list{
+        padding-top: 4em;
+    }
+    .cat_list .cat_list_box span {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .cat_list .cat_list_box{
+        height: 20em;
+    }
+}
+
+.cat_list_box span:hover{
+    background-color: #F9690E;
+    color: black;
+}
