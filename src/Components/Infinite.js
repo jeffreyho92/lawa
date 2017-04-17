@@ -102,6 +102,7 @@ class Infinite extends Component {
                     'https://scontent-kut2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16229149_1843308122554535_7112231577479806976_n.jpg'];
         
         var currentPage = self.state.currentPage;
+        console.log(currentPage)
         var api_url = ''
         if(this.props.name){
             api_url = `https://lawa-api.herokuapp.com/api/images?page=${currentPage}&cat=${this.props.name}`
@@ -131,7 +132,7 @@ class Infinite extends Component {
     }
     
     componentWillMount(){
-        this.loadItems(1);
+        //this.loadItems(1);
     }
     
     render() {
