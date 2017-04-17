@@ -4,24 +4,50 @@ import FooterBar from '../../Components/FooterBar';
 import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
 import img4 from '../../../public/img/img4.jpeg';
 import './ImageScene.css';
+import axios from 'axios';
 
 class ImageScene extends Component {
-  render() {
-    return (
-      <div>
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          img: '',
+          user: '',
+          user_pic: '',
+          username: '',
+          caption: '',
+      };
+  }
+  componentWillMount(){
+    var id = this.props.match.params.id;
+    var api_url = `https://lawa-api.herokuapp.com/api/images/${id}`
+    axios.get(api_url)
+      .then(res => {
+        this.setState({
+            img: res.data[0].images.standard_resolution.url,
+            user: res.data[0].caption.from.full_name,
+            username: res.data[0].caption.from.username,
+            user_pic: res.data[0].caption.from.profile_picture,
+            caption: res.data[0].caption.text
+        });
+      });
+  }
+  render() {    return (
+      <div
+>
         <NavBar active=""/>
         <Grid>
           <Row className="imageContent" >
             <Row className="equal">
                 <Col xs={6} md={8} className="leftBox">
-                    <img src={'https://scontent-kut2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16584974_1458979630788510_3806227282167595008_n.jpg'}
+                    <img src={this.state.img}
                         className="img" />
                 </Col>
                 <Col xs={6} md={4} className="rightBox">
                     <Row style={{display: 'flex', alignItems: 'center'}}>
                         <Col md={8}>
-                            <Image src={img4} style={{width: 50, height: 50}} circle/>
-                            <span className="username">Alkarus</span>
+                            <Image src={this.state.user_pic} style={{width: 50, height: 50}} circle/>
+                            <span className="username">{this.state.user}</span>
                         </Col>
                         <Col md={4}>
                             <Button bsStyle="success" bsSize="sm" className="pull-right">follow</Button>
@@ -64,14 +90,14 @@ class ImageScene extends Component {
             </Row>
             <Row className="mobileImageContent">
                 <Col xs={12} className="img_col">
-                    <img src={'https://scontent-kut2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16584974_1458979630788510_3806227282167595008_n.jpg'}
+                    <img src={this.state.img}
                     className="img" />
                 </Col>
                 <Col xs={12} className="user_col">
                     <Row style={{display: 'flex', alignItems: 'center'}}>
                         <Col xs={8}>
-                            <Image src={img4} style={{width: 50, height: 50}} circle/>
-                            <span className="username">Alkarus</span>
+                            <Image src={this.state.user_pic} style={{width: 50, height: 50}} circle/>
+                            <span className="username">{this.state.user}</span>
                         </Col>
                         <Col xs={4}>
                             <Button bsStyle="success" bsSize="sm" className="pull-right">follow</Button>

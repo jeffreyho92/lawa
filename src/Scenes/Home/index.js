@@ -56,7 +56,7 @@ class App extends Component {
                     <em>INSPIRATION</em>
                 </Col>
             </Row>
-
+            
             <Row className="cat_container">
                 <Col xs={12} md={3} className="cat_col">
                     <div className="cat_box cat_local">
