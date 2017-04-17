@@ -23,13 +23,23 @@ class ImageScene extends Component {
     var api_url = `https://lawa-api.herokuapp.com/api/images/${id}`
     axios.get(api_url)
       .then(res => {
-        this.setState({
-            img: res.data[0].images.standard_resolution.url,
-            caption: res.data[0].caption.text,
-            user: res.data[0].caption.from.full_name,
-            username: res.data[0].caption.from.username,
-            user_pic: res.data[0].caption.from.profile_picture,
-        });
+        if(res.data[0].caption !== null){
+          this.setState({
+              img: res.data[0].images.standard_resolution.url,
+              caption: res.data[0].caption.text,
+              user: res.data[0].caption.from.full_name,
+              username: res.data[0].caption.from.username,
+              user_pic: res.data[0].caption.from.profile_picture,
+          });
+        }else{
+          this.setState({
+              img: res.data[0].images.standard_resolution.url,
+              caption: '',
+              user: '',
+              username: '',
+              user_pic: '',
+          });
+        }
       });
   }
   render() {    return (
