@@ -12,9 +12,9 @@ var rows = ['https://scontent-kut2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.0
 
 class DiscoverScene extends Component {
   render() {
-    var name = this.props.match.params.name;
+    var cat = this.props.match.params.cat;
     var img_class = null;
-    switch (name) {
+    switch (cat) {
         case 'local':
             img_class = 'img_cat_local';
             break;
@@ -35,12 +35,12 @@ class DiscoverScene extends Component {
         <NavBar active="discover"/>
           <div className="title">
             <div className={"title_img "+img_class}>
-                <em>{name.toUpperCase()}</em>
+                <em>{cat.toUpperCase()}</em>
             </div>
             <div className="title_spacing">&emsp;</div>
           </div>
         <Grid>
-          <Infinite name={name} />
+          <Infinite cat={cat} />
         </Grid>
       </div>
     );

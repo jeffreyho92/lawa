@@ -108,6 +108,7 @@ import Home from './Scenes/Home'
 import DiscoverScene from './Scenes/DiscoverScene'
 import DiscoverListScene from './Scenes/DiscoverListScene'
 import ImageScene from './Scenes/ImageScene'
+import ProfileScene from './Scenes/ProfileScene'
 import NotFound from './Scenes/NotFound'
 
 const App = () => (
@@ -115,8 +116,9 @@ const App = () => (
     <div>
       <Route exact path="/" component={Home}/>
       <Route path="/discover" component={DiscoverListScene}/>
-      <Route path="/d/:name" component={DiscoverScene}/>
+      <Route path="/d/:cat" component={DiscoverScene}/>
       <Route path="/p/:id" component={ImageScene}/>
+      <Route path="/u/:username" component={ProfileScene}/>
       {/*<Route path="*" component={NotFound}/>*/}
     </div>
   </Router>

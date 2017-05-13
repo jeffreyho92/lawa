@@ -88,7 +88,7 @@ class App extends Component {
           </Grid>
         </Jumbotron>
         <Grid>
-          <Infinite />
+          <Infinite name="local" />
         </Grid>
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
         <FooterBar />

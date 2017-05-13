@@ -5,6 +5,7 @@ import { Grid, Row, Col, Image, Button } from 'react-bootstrap';
 import img4 from '../../../public/img/img4.jpeg';
 import './ImageScene.css';
 import axios from 'axios';
+import { config } from '../../config.js';
 
 class ImageScene extends Component {
   constructor(props) {
@@ -16,11 +17,13 @@ class ImageScene extends Component {
           user_pic: '',
           username: '',
           caption: '',
+          comments: [],
       };
   }
   componentWillMount(){
     var id = this.props.match.params.id;
-    var api_url = `https://lawa-api.herokuapp.com/api/images/${id}`
+    //var api_url = `https://lawa-api.herokuapp.com/api/images/${id}`
+    var api_url = `${config.api_url}/api/images/${id}`
     axios.get(api_url)
       .then(res => {
         if(res.data[0].caption !== null){
@@ -30,6 +33,7 @@ class ImageScene extends Component {
               user: res.data[0].caption.from.full_name,
               username: res.data[0].caption.from.username,
               user_pic: res.data[0].caption.from.profile_picture,
+              comments: res.data[0].comments,
           });
         }else{
           this.setState({
@@ -38,13 +42,18 @@ class ImageScene extends Component {
               user: '',
               username: '',
               user_pic: '',
+              comments: [],
           });
         }
       });
   }
-  render() {    return (
-      <div
->
+  render() {
+    console.log(this.state.comments)
+    const comments = this.state.comments.map((comment) =>
+      <li><b className="name">{comment.from.full_name || comment.from.username}</b><span>{comment.text}</span></li>
+    );
+    return (
+      <div>
         <NavBar active=""/>
         <Grid>
           <Row className="imageContent" >
@@ -55,15 +64,22 @@ class ImageScene extends Component {
                 </Col>
                 <Col xs={6} md={4} className="rightBox">
                     <Row style={{display: 'flex', alignItems: 'center'}}>
-                        <Col md={8}>
+                        <Col md={12}>
                             <Image src={this.state.user_pic} style={{width: 50, height: 50}} circle/>
                             <span className="username">{this.state.user}</span>
                         </Col>
+                        {/*
                         <Col md={4}>
                             <Button bsStyle="success" bsSize="sm" className="pull-right">follow</Button>
                         </Col>
+                        */}
                     </Row>
                     <hr/>
+                    <Row>
+                      <Col md={12} className="caption">
+                        {this.state.caption}
+                      </Col>
+                    </Row>
                     <Row className="likesBox">
                         <Col md={10}>
                             2,130 likes
@@ -75,18 +91,7 @@ class ImageScene extends Component {
                     <Row className="commentsBox">
                         <Col md={12}>
                             <ul className="list-unstyled">
-                                <li>
-                                    <a className="name">1</a> &emsp;
-                                    <span>Abc</span>
-                                </li>
-                                <li>
-                                    <a className="name">2</a> &emsp;
-                                    <span>Def</span>
-                                </li>
-                                <li>
-                                    <a className="name">3</a> &emsp;
-                                    <span>Ghi</span>
-                                </li>
+                                {comments}
                             </ul>
                         </Col>
                     </Row>

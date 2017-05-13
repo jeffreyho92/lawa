@@ -74,10 +74,12 @@
 
 .name{
     color: black;
+    padding-right: .5em;
+    font-size: 14px;
 }
 
 .commentsBox{
-    height: 65%;
+    height: 25%;
 }
 
 .commentsBox li{
@@ -88,8 +90,12 @@
     border: 0px;
 }
 
+.caption{
+    overflow: hidden;
+}
 
 .likesBox{
+    margin-top: 1em;
     height: 43px;
 }
 

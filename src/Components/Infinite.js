@@ -4,6 +4,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import './Infinite.css';
+import { config } from '../config.js';
 
 const api = {
     baseUrl: 'https://api.soundcloud.com',
@@ -104,11 +105,16 @@ class Infinite extends Component {
         var currentPage = self.state.currentPage;
         console.log(currentPage)
         var api_url = ''
-        if(this.props.name){
-            api_url = `https://lawa-api.herokuapp.com/api/images?page=${currentPage}&cat=${this.props.name}`
+        if(this.props.cat){
+            //api_url = `https://lawa-api.herokuapp.com/api/images?page=${currentPage}&cat=${this.props.name}`
+            api_url = `${config.api_url}/api/images?page=${currentPage}&cat=${this.props.cat}`
+        }else if(this.props.user){
+            api_url = `${config.api_url}/api/user/images/?page=${currentPage}&username=${this.props.user}`
         }else{
-            api_url = `https://lawa-api.herokuapp.com/api/images?page=${currentPage}`
+            //api_url = `https://lawa-api.herokuapp.com/api/images?page=${currentPage}`
+            api_url = `${config.api_url}/api/images?page=${currentPage}`
         }
+        console.log(api_url)
         
         axios.get(api_url)
             .then(res => {
