@@ -16,5 +16,5 @@ export default config = function() {
 }*/
 
 export var config = {
-    api_url: 'http://139.59.113.220:3000'
+    api_url: 'http://45.63.18.124:3010'
 };
