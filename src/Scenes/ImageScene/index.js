@@ -22,19 +22,31 @@ class ImageScene extends Component {
   }
   componentWillMount(){
     var id = this.props.match.params.id;
+    var username = '';
     //var api_url = `https://lawa-api.herokuapp.com/api/images/${id}`
     var api_url = `${config.api_url}/api/images/${id}`
     axios.get(api_url)
       .then(res => {
-        if(res.data[0].caption !== null){
+        if(res.data[0].username !== null){
+          username = res.data[0].username;
           this.setState({
               img: res.data[0].images.standard_resolution.url,
-              caption: res.data[0].caption.text,
-              user: res.data[0].caption.from.full_name,
-              username: res.data[0].caption.from.username,
-              user_pic: res.data[0].caption.from.profile_picture,
-              comments: res.data[0].comments,
+              caption: res.data[0].caption,
+              username: res.data[0].username,
+              //comments: res.data[0].comments,
+              comments: [],
           });
+
+          api_url = `${config.api_url}/api/user_info/${username}`
+          axios.get(api_url)
+            .then(res => {
+              if(res.data.username !== null){
+                this.setState({
+                    user: res.data.full_name,
+                    user_pic: res.data.profile_pic_url
+                });
+              }
+            });
         }else{
           this.setState({
               img: res.data[0].images.standard_resolution.url,
